@@ -18,7 +18,7 @@ import { RegisterComponent } from './register/register.component';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
 import { AlertifyService } from './_services/alertify.service';
 import { MemberListComponent } from './member/member-list/member-list.component';
-import { ListComponent } from './list/list.component';
+import { ListsComponent } from './list/list.component';
 import { MessagesComponent } from './messages/messages.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
@@ -33,6 +33,7 @@ import { MemberEditlResolver } from './_resolver/member-edit.resolver';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { PhotoEditorComponent } from './member/photo-editor/photo-editor.component';
 import { TimeAgoPipe } from 'time-ago-pipe';
+import { ListsResolver } from './_resolver/lists.resolver';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -45,7 +46,7 @@ export function tokenGetter() {
       HomeComponent,
       RegisterComponent,
       MemberListComponent,
-      ListComponent,
+      ListsComponent,
       MessagesComponent,
       MemberCardComponent,
       MemberDetailComponent,
@@ -85,7 +86,8 @@ export function tokenGetter() {
       MemberDetailResolver,
       MemberListResolver,
       MemberEditlResolver,
-      PreventUnsavedChanges
+      PreventUnsavedChanges,
+      ListsResolver
    ],
    bootstrap: [
       AppComponent
